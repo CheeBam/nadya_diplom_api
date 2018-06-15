@@ -29,6 +29,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
             $router->get('{id}', ['uses' => 'DataController@getProduct']);
             $router->get('by/category', ['uses' => 'DataController@getProductsByCategoryName']);
             $router->get('by/purchases', ['uses' => 'DataController@getTopPurchases']);
+            $router->get('by/name/{title}', ['uses' => 'DataController@getProductInfoByName']);
         });
 
         $router->group(['prefix' => 'purchase/all'], function () use ($router) {
@@ -43,7 +44,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         });
 
         $router->group(['prefix' => 'file'], function () use ($router) {
-            $router->get('purchases/all',  ['uses' => 'DataController@downloadAllPurchasesFile']);
+            $router->get('purchases/all',  ['uses' => 'DataController@allPurchasesFile']);
+            $router->get('general/all',  ['uses' => 'DataController@allGeneralFile']);
+            $router->get('purchases/info',  ['uses' => 'DataController@purchasesInfoFile']);
         });
 
     });
@@ -60,6 +63,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
             $router->get('{id}', ['uses' => 'DataController@getProduct']);
             $router->get('by/category', ['uses' => 'DataController@getProductsByCategoryName']);
             $router->get('by/purchases', ['uses' => 'DataController@getTopPurchases']);
+            $router->get('by/name/{title}', ['uses' => 'DataController@getProductInfoByName']);
         });
 
         $router->group(['prefix' => 'purchase/all'], function () use ($router) {
@@ -74,7 +78,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         });
 
         $router->group(['prefix' => 'file'], function () use ($router) {
-            $router->get('purchases/all',  ['uses' => 'DataController@downloadAllPurchasesFile']);
+            $router->get('purchases/all',  ['uses' => 'DataController@allPurchasesFile']);
+            $router->get('general/all',  ['uses' => 'DataController@allGeneralFile']);
+            $router->get('purchases/info',  ['uses' => 'DataController@purchasesInfoFile']);
         });
     });
 
@@ -89,6 +95,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
             $router->get('{id}', ['uses' => 'DataController@getProduct']);
             $router->get('by/category', ['uses' => 'DataController@getProductsByCategoryName']);
             $router->get('by/purchases', ['uses' => 'DataController@getTopPurchases']);
+            $router->get('by/name/{title}', ['uses' => 'DataController@getProductInfoByName']);
         });
 
         $router->group(['prefix' => 'purchase/all'], function () use ($router) {
@@ -103,7 +110,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         });
 
         $router->group(['prefix' => 'file'], function () use ($router) {
-            $router->get('purchases/all',  ['uses' => 'DataController@downloadAllPurchasesFile']);
+            $router->get('purchases/all',  ['uses' => 'DataController@allPurchasesFile']);
+            $router->get('general/all',  ['uses' => 'DataController@allGeneralFile']);
+            $router->get('purchases/info',  ['uses' => 'DataController@purchasesInfoFile']);
         });
     });
 });
